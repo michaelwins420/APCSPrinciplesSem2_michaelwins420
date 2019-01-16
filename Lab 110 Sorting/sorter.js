@@ -25,7 +25,9 @@ function setup() {
         a[j-1] = temp;
 			}
 		}
+		console.log(a);
 	}
+	return a;
 }
 
 function bubbleSort(a){
@@ -38,8 +40,9 @@ function bubbleSort(a){
            a[j] = temp;
         }
      }
+		 console.log(a);
    }
-
+	 return a;
 }
 
 function selectionSort(a) {
@@ -53,7 +56,9 @@ for (var i = 0; i < a.length - 1; i++){
 	    var smallerNumber = a[index];
       a[index] = a[i];
       a[i] = smallerNumber;
+			console.log(a);
     }
+		return a;
 	}
 
 function insertionSort(a) {
@@ -67,5 +72,7 @@ function insertionSort(a) {
 									 a[j-1] = temp;
 								 }
 						 }
+						 console.log(a);
 				}
+				return a;
 			}

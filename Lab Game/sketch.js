@@ -67,7 +67,7 @@ function draw(){ //draw function
   point.run();
   for(var i = balls.length-1; i >= 0; i--){//for loop of splicing balls
     if(balls[i].isColliding()){//Calls Collision
-      text('Refresh You Bot' , 250, 250);
+      text('Refresh' , 250, 250);
       fill(0, 250, 0)
         noLoop();
       }

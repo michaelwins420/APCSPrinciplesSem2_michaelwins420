@@ -17,6 +17,9 @@ function Paddle(loc,  col, vel){
 		this.loc.add(this.vel);
 		if(this.loc.y + w > (point.loc.y - point.h/2) && this.loc.y < (point.loc.y + point.h/2) && this.loc.x < point.loc.x + point.w/2
     && this.loc.x > (point.loc.x-point.w/2)){
+			numBalls+=3;
+			score = score + 1;
+			loadBalls(numBalls);
 			newPoint();
 		}
 		}

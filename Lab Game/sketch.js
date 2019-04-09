@@ -3,7 +3,7 @@ var cols, rows;
 var paddle; //paddle variable
 var point;
 var balls = []; //array of boids
-var numBalls = 30;
+var numBalls = 3;
 var score = 0;
 //function preload(){  //preload function
   //img = loadImage('FilthyFrank.jpeg')
@@ -57,15 +57,17 @@ var fy = floor(random(rows)) //random rows for food
 function draw(){ //draw function
   background(20, 20, 20);
   textSize(50);
+  text(score, 50, 50);
   fill(0, 255, 0);
   for(var i = 0; i < balls.length; i++){//for loop of balls
     balls[i].run(); //array of balls
+    text(score, 50, 50);
   }
   paddle.run(); //calls  function
   point.run();
   for(var i = balls.length-1; i >= 0; i--){//for loop of splicing balls
     if(balls[i].isColliding()){//Calls Collision
-      text('Refresh' , 250, 250);
+      text('Refresh You Bot' , 250, 250);
       fill(0, 250, 0)
         noLoop();
       }
@@ -114,7 +116,7 @@ function loadBalls(numBalls){ //loads number of balls
   balls = [];
   for(var i = 0; i < numBalls; i++){ //for loop of parameters
     var loc = createVector(random(width), random(100));//location variable
-    var vel = createVector(random(-1,1), random(-1, 1));// velocity variable
+    var vel = createVector(random(-1,5), random(-1, 5));// velocity variable
     var col = color(random(255),random(255), random(255));//color variable
     var b = new Ball(loc,  vel, col); //Parameters of ball
     balls.push(b);//Pushes ball and its patameters

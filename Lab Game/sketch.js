@@ -16,7 +16,7 @@ function setup(){//setup function
   rows = height/w;
   background(20, 20, 20); //creates background color
   cnv.position((windowWidth-width)/2, 30); //canvas position
-  paddle = new Paddle(createVector(floor(width/2, floor(height - 200))),//creates paddle
+  paddle = new Paddle(createVector(floor(width/2, floor(height/2))),//creates paddle
   color(255, 0, 0));
   var fx = floor(random(cols)) //random # of columns
   var fy = floor(random(rows)) //random # of rows
@@ -44,13 +44,13 @@ function newPoint(){ //newFood function
 var fx = floor(random(cols)) //random columns for food
 var fy = floor(random(rows)) //random rows for food
 //for(var i = 0; i < paddle.length; i++){ //for loop for adding segments
-  //if(point.loc!=paddle.loc){ //food doesn't appear in snake
+  if(point.loc!=paddle.loc){ //food doesn't appear in snake
     point = new Point(createVector(fx*w, fy*w)); //creates vector for food obkect
 
 }
 
 
-//}
+}
 
 
 //  The draw function is called @ 30 fps
@@ -115,8 +115,8 @@ function draw(){ //draw function
 function loadBalls(numBalls){ //loads number of balls
   balls = [];
   for(var i = 0; i < numBalls; i++){ //for loop of parameters
-    var loc = createVector(random(width), random(100));//location variable
-    var vel = createVector(random(-1,5), random(-1, 5));// velocity variable
+    var loc = createVector(random(width), random(height));//location variable
+    var vel = createVector(random(-1,2), random(-1, 2));// velocity variable
     var col = color(random(255),random(255), random(255));//color variable
     var b = new Ball(loc,  vel, col); //Parameters of ball
     balls.push(b);//Pushes ball and its patameters

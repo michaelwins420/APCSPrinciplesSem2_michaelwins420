@@ -5,6 +5,12 @@ var point;
 var balls = []; //array of boids
 var numBalls = 3;
 var score = 0;
+var gameState = 1;
+
+function preload(){
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound('http://freesound.org/data/previews/466/466168_9851523-lq.mp3');
+}
 //function preload(){  //preload function
   //img = loadImage('FilthyFrank.jpeg')
 //}
@@ -38,6 +44,9 @@ function keyPressed(){ //keypressed function
   if(keyCode === LEFT_ARROW){
     paddle.vel = createVector(-10,0);
   }
+  if (keyCode === 32 && score===0){
+    gameState=2; //Game plays, State of game is 2
+  }
 }
 
 function newPoint(){ //newFood function
@@ -55,6 +64,27 @@ var fy = floor(random(rows)) //random rows for food
 
 //  The draw function is called @ 30 fps
 function draw(){ //draw function
+  if(gameState === 1){ //Game State 1 starts game
+    startGame(); //Game starts
+  }else if(gameState === 2){ //Game State 2 plays game
+    playGame(); //Game plays
+  //}else if(gameState === 3){ //Game State 3 ends game
+    //endGame(); //Game ends
+  //}
+}
+}
+
+function startGame(){ //start of game function
+    //if(start==="true" && score===0){ //score is 0
+      textFont('Lobster'); //font of text
+      fill(255,0,0); //color of text
+      textAlign(CENTER); //Allignment of the text in centered
+      textSize(20); //size of the text
+      text("Use arrow keys, avoid the balls and reach green square, press Spacebar to begin",400,300) //Words
+   }
+ //}
+
+  function playGame(){
   background(20, 20, 20);
   textSize(50);
   text(score, 50, 50);
@@ -69,14 +99,15 @@ function draw(){ //draw function
     if(balls[i].isColliding()){//Calls Collision
       text('Refresh' , 250, 250);
       fill(0, 250, 0)
+      mySound.play();
         noLoop();
       }
     }
+  }
   //text(score, 50, 50);
   // for each ball call  run
 
 
-}
 
 
 

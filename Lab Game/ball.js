@@ -1,9 +1,4 @@
-/*
-//   Name of project
-//   Miguel
-//   Date 101718
-//
-*/
+
 
 
 //Ball constructor function

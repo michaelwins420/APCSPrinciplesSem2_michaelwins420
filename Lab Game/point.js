@@ -1,4 +1,4 @@
-//Michael Costantini food.js
+
 function Point(loc){//Food constructor function
   this.loc=loc;
   this.w = 40;

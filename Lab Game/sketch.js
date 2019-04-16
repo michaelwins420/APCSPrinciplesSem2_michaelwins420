@@ -9,7 +9,8 @@ var gameState = 1;
 
 function preload(){
   soundFormats('mp3', 'ogg');
-  mySound = loadSound('http://freesound.org/data/previews/466/466168_9851523-lq.mp3');
+  mySound = loadSound('http://freesound.org/data/previews/466/466403_9851523-lq.mp3');
+  newSound = loadSound('http://freesound.org/data/previews/466/466218_9851523-lq.mp3')
 }
 //function preload(){  //preload function
   //img = loadImage('FilthyFrank.jpeg')
@@ -75,12 +76,15 @@ function draw(){ //draw function
 }
 
 function startGame(){ //start of game function
-    //if(start==="true" && score===0){ //score is 0
+    //if(start==="true" && score===0){ //score is
       textFont('Lobster'); //font of text
       fill(255,0,0); //color of text
       textAlign(CENTER); //Allignment of the text in centered
       textSize(20); //size of the text
-      text("Use arrow keys, avoid the balls and reach green square, press Spacebar to begin",400,300) //Words
+      text("Use arrow keys, avoid the balls and reach the green square, press Spacebar to begin",900,600)
+      fill(0, 255, 0);
+      textSize(50);
+      text("Destination", 875, 400) //Words
    }
  //}
 
@@ -97,10 +101,11 @@ function startGame(){ //start of game function
   point.run();
   for(var i = balls.length-1; i >= 0; i--){//for loop of splicing balls
     if(balls[i].isColliding()){//Calls Collision
-      text('Refresh' , 250, 250);
+      text('Refresh :(' , 250, 250);
       fill(0, 250, 0)
-      mySound.play();
-        noLoop();
+      mySound.pause();
+      noLoop();
+      newSound.play();
       }
     }
   }

@@ -21,6 +21,9 @@ function Paddle(loc,  col, vel){
 			score = score + 1;
 			loadBalls(numBalls);
 			newPoint();
+			if(score === 1){
+				mySound.loop();
+			}
 		}
 		}
 

@@ -9,15 +9,61 @@ body {
 
 #mid{
   background-color: white;
-  margin-left: 90px;
+  margin-left: 350px;
   height: 550px;
-  width: 1500px;
-
+  width: 1200px;
+  text-align: center;
+  padding-top: 0px;
+  font-style: normal;
+  color: black;
 }
 
 
+#AfterMid{
+  background-color: lightblue;
+  margin-left: 350px;
+  height: 150px;
+  width: 1200px;
+}
+
+.btn:hover {background: #C0C0C0;}
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 44px 50px;
+  font-size: 40px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.bun {
+  border: none;
+  background-color: inherit;
+  padding: 4px 1px;
+  font-size: 22px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+}
 
 
+.success {color: green;}
+.info {color: dodgerblue;}
+.warning {color: orange;}
+.danger {color: red;}
+.default {color: black;}
+
+.cool {color: red;
+}
+.cool2 {color: orange;
+}
+.cool3 {color: green;
+}
+.cool4 {color: blue;
+}
+.cool5 {color: purple;
+}
 
 h1 {
   color: white;
